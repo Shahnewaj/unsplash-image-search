@@ -20,8 +20,8 @@ const LoginProcess = () => {
 
     if (!!auth_code) {
         axios.post('https://unsplash.com/oauth/token', {
-            client_id: 'm7c8rYAENQzdugShBSZSTpf0K4wBeiA0u7_hEGwRrXg',
-            client_secret: 'BCLGvRnGaD24Lwi5n2Twqw8poGR3SkD0eiQ0Um-Ww_s',
+            client_id: `${process.env.React_App_CLIENT_ID}`,
+            client_secret: `${process.env.React_App_CLIENT_SECRET}`,
             redirect_uri: 'http://localhost:3000/loginprocess',
             code: `${auth_code}`,
             grant_type: 'authorization_code'
