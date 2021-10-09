@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import Login from './pages/Login';
+import Search from './pages/Search';
+import NotFound from './pages/NotFound';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import LoginProcess from './pages/LoginProcess';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import { persistStore } from 'redux-persist'
+import store from './store/store';
+import ProtectedRoute from './ProtectedRoute';
 
-function App() {
+const App = () => {
+  let persistor = persistStore(store);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <Router>
+          <div className="App">
+            <Switch>
+              <ProtectedRoute exact path="/" component={Search} />
+              <ProtectedRoute exact path="/search" component={Search} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/loginprocess" component={LoginProcess} />
+              <Route exact path="*" component={NotFound} />
+            </Switch>
+          </div>
+        </Router>
+      </PersistGate>
+    </Provider>
+
   );
 }
 

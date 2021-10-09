@@ -1,0 +1,13 @@
+/* .searchMain:{
+    
+} */
+.header{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+.search{
+    flex-direction: row;
+    display: flex;
+    
+}
