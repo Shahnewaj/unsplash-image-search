@@ -42,16 +42,15 @@ const Search = () => {
             }).then(function (response) {
                 // console.log(response)
                 setImageData(response?.data?.results)
+                        setSearchTerm('')
+        setLoading(false)
 
             })
                 .catch((err) => { })
-                .finally(() => {
-                    setLoading(false)
-                })
+            
             dispatch(saveSearchTerm({ term: trimedTerm }))
         }
-        setSearchTerm('')
-        setLoading(false)
+
 
     }
 
