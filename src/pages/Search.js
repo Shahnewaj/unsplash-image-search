@@ -70,6 +70,7 @@ const Search = () => {
                                     id="free-solo-demo"
                                     freeSolo
                                     options={savedSearchList.map((option) => option.term)}
+                                    value={searchTerm}
                                     onInputChange={(e, value) => {
                                         setSearchTerm(value)
                                     }}
