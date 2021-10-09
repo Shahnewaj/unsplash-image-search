@@ -1,12 +1,12 @@
 # How to use this
 
 ### Installation Command
-git clone https://github.com/Shahnewaj/unsplash-image-search.git
+git clone https://github.com/Shahnewaj/unsplash-image-search.git \
 yarn install 
 
 
 
-### Run 
+### Run Application
 
 #### yarn start
 
