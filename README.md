@@ -4,7 +4,11 @@
 git clone https://github.com/Shahnewaj/unsplash-image-search.git \
 yarn install 
 
+### Environment Setup
+add a  .env file in root directory 
 
+React_App_CLIENT_ID='your_unsplash_client_id'
+React_App_CLIENT_SECRET='your_unsplash_client_secret'
 
 ### Run Application
 
